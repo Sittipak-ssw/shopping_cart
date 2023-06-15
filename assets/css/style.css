@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+* {
+    font-family: "Manrope";
+}
+h6 {
+    font-weight: bold !important;
+    font-size: 18px;
+    color: #101913;
+    line-height: 22px;
+    
+}
+
+p {
+    font-size: 14px;
+}
