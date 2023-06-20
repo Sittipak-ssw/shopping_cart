@@ -1,36 +1,70 @@
 <style>
     .top-right {
         position: absolute;
-        top: 15px;
-        right: 0px;
-
-    } 
-
-    .top-right-ipad {
-        position: absolute;
-        top: 15px;
-        right: 100px;
-
-    }
-
-    .top-right-shoe {
-        position: absolute;
-        top: 15px;
-        right: 70px;
+        top: 30px;
+        right: 40px;
 
     }
 
     .photo {
         position: relative;
-
         color: white;
     }
 
-    .bottom-right {
-        position: absolute;
-        bottom: 100px;
-        right: 16px;
+    .shoe {
+        height: auto;
+        min-height: 385px;
+        max-height: 385px;
     }
+
+    .ppp2 {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        border: 2px solid #DDDDDD;
+        margin-top: 5px;
+        font-size: 30px;
+        color: #DDDDDD;
+    }
+
+    .ppp2:hover {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        border: 2px solid #DDDDDD;
+        margin-top: 5px;
+        font-size: 30px;
+        color: #185BC3;
+    }
+
+
+    
+
+    .nnn2 {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        border: 2px solid #DDDDDD;
+        margin-top: 5px;
+        font-size: 30px;
+        color: #DDDDDD;
+    }
+    
+    .nnn2:hover {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        border: 2px solid #DDDDDD;
+        margin-top: 5px;
+        font-size: 30px;
+        color: #185BC3;
+    }
+
+   
 </style>
 
 <section>
@@ -40,8 +74,56 @@
                 <h2 style="font-weight:bold;">Browse Categories of<br>The Store</h2>
             </div>
         </div>
+        <div class="row">
 
-        <div class="row mt-3 mb-5">
+            <div class="col-xl-5 col-lg-5 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-12 ">
+                        <div class="photo p-2">
+                            <img class="w-100" src="<?php echo base_url('assets/img/clothes.png') ?>" style="border-radius: 30px;">
+                            <div class="top-right"><b>Fashion</b>
+                                <p>30,000 items</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="photo p-2">
+                            <img class="w-100" src="<?php echo base_url('assets/img/cream.png') ?>" style="border-radius: 30px;">
+                            <div class="top-right"><b>Skincare</b>
+                                <p>2,000 items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-7 col-lg-7 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="photo p-xl-2 p-lg-2 p-0">
+                            <img class="w-100 shoe" src="<?php echo base_url('assets/img/shoe.png') ?>" style="border-radius: 30px;">
+                            <div class="top-right"><b>Shoes</b>
+                                <p>10,000 items</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="photo p-xl-2 p-lg-2 p-0">
+                            <img class="w-100 shoe" src="<?php echo base_url('assets/img/ipad.png') ?>" style="border-radius: 30px; ">
+                            <div class="top-right"><b>Electronic</b>
+                                <p>10,000 items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <div class="row mt-3 mb-5">
             <div class="col-4 photo">
                 <img src="<?php echo base_url('assets/img/clothes.png') ?>" style="border-radius: 30px;">
                 <div class="top-right"><b>Fashion</b>
@@ -66,7 +148,7 @@
                     <p>10,000 items</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row pt-5" style="text-align: center;">
             <h2 style="font-weight: bold;">Why Choose Ba<span style="color: #3C9379;">chira</span>?</h2>
@@ -95,62 +177,64 @@
             </div>
         </div>
 
-        <div class="row pt-5 mb-3">
+        <div class="row pt-5 mb-5">
             <div class="col-4">
                 <h2 style="font-weight:bold;">Populer Products From<br>All Brands</h2>
             </div>
         </div>
 
+        <div class="col-12 mb-5">
+            <div class="slick-controls">
+                <button class="ppp2"> < </button>
+                <button class="nnn2"> > </button>
+            </div>
+        </div>
 
 
+        <div class="slide_detail">
 
-        <div class="row slide_detail">
-        <button type="button" class="slick-prev">Previous</button>
-        <button type="button" class="slick-next">Next</button>
-
-            <div class="col-3">
-                <img src="<?php echo base_url('assets/img/nike.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
+            <div class="p-2">
+                <img class="w-100" src="<?php echo base_url('assets/img/nike.png') ?>" style="border-radius: 30px;">
                 <br>
                 <b>Nike Air Force</b>
                 <p>Rp 2.999.999</p>
             </div>
-            <div class="col-3">
-                <img src="<?php echo base_url('assets/img/hood.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
+            <div class="p-2">
+                <img class="w-100" src="<?php echo base_url('assets/img/hood.png') ?>" style="border-radius: 30px; ">
                 <br>
                 <b>White Sweter</b>
                 <p>Rp 299.999</p>
             </div>
-            <div class="col-3">
-                <img src="<?php echo base_url('assets/img/clock.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
+            <div class="p-2">
+                <img class="w-100" src="<?php echo base_url('assets/img/clock.png') ?>" style="border-radius: 30px;">
                 <br>
                 <b>Android Smartwatch</b>
                 <p>Rp 1.399.999</p>
             </div>
-            <div class="col-3">
-                <img src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
+            <div class="p-2">
+                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px;">
                 <br>
                 <b>Apple Airpods</b>
                 <p>Rp 2.599.999</p>
             </div>
-            <div class="col-3">
-                <img src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
+            <div class="p-2">
+                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px;">
                 <br>
                 <b>Apple Airpods</b>
                 <p>Rp 2.599.999</p>
             </div>
-            <div class="col-3">
-                <img src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
+            <div class="p-2">
+                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
                 <br>
                 <b>Apple Airpods</b>
                 <p>Rp 2.599.999</p>
             </div>
-            <div class="col-3">
-                <img src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
+            <div class="p-2">
+                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
                 <br>
                 <b>Apple Airpods</b>
                 <p>Rp 2.599.999</p>
             </div>
-            
 
         </div>
     </div>
@@ -158,11 +242,15 @@
     <script>
         $(document).ready(function() {
             $('.slide_detail').slick({
-                dots: true,
+                prevArrow: $(".ppp2"),
+                nextArrow: $(".nnn2"),
+                arrows: true,
                 infinite: false,
+                autoplay: true,
+                autoplaySpeed: 4000,
                 speed: 300,
                 slidesToShow: 4,
-                slidesToScroll: 4,
+                slidesToScroll: 1,
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
