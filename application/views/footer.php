@@ -3,11 +3,11 @@
 
     <!-- Section: Links  -->
     <section style="padding-top: 20px">
-        <div class="container text-center text-md-start mt-5">
+        <div class="container text-start text-md-start mt-5">
             <!-- Grid row -->
             <div class="row mt-3">
                 <!-- Grid column -->
-                <div class="col-md-4 col-lg-6 col-xl-3  mb-4">
+                <div class="col-12 col-md-4 col-lg-6 col-xl-3  mb-4">
                     <!-- Content -->
                     <img src="<?php echo base_url('assets/img/Bachira.png') ?>" alt="LOGO-S-FIT-REHAB"
                         style="width: 120px;">
@@ -20,7 +20,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2  mb-4">
+                <div class="col-6 col-md-4 col-lg-2 col-xl-2  mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase mb-4 mx-auto">
                         For Beginner
@@ -37,7 +37,7 @@
 
                 </div>
 
-                <div class="col-md-3 col-lg-2 col-xl-2  mb-4">
+                <div class="col-6 col-md-4 col-lg-2 col-xl-2  mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase mb-4 mx-auto">
                         Overview
@@ -56,7 +56,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <div class="col-6 col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
                     <!-- Links -->
                     <h6 class="text-uppercase mb-4 mx-auto">
                         Explore Us
@@ -77,7 +77,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
+                <div class="col-6 col-md-4 col-lg-2 col-xl-2 mx-auto">
                     <!-- Links -->
                     <h6 class="text-uppercase mb-4 mx-auto">Connect Us</h6>
                     <p>support@bachira.com</p>
