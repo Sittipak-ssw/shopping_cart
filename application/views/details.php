@@ -213,7 +213,8 @@
 
             <div class="detail_price col-sm-12 col-md-5">
                 <button class="product_stock">In Stock</button>
-                <div class="product_heading">Nike Air Force</div>
+
+                <div class="product_heading"><?php echo $result_list[0]->title ?></div>
                 <div class="product_price"><span><strike>9.99</strike></span> 7.99 USD</div>
                 <hr>
                 <p class="product_description">Cras id felis tincidunt, molestie lacus ac, lobortis nisl. Nam
