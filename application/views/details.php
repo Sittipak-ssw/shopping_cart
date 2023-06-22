@@ -21,6 +21,15 @@
         font-size: 20px;
     }
 
+    .product_outstock {
+        border: none;
+        text-decoration: none;
+        background-color: red;
+        color: white;
+        font-weight: 300;
+        font-size: 20px;
+    }
+
     .product_heading {
         margin-top: 20px;
         font-size: 40px;
@@ -178,7 +187,7 @@
         color: #000000;
     }
 
-    /* กำหนดสีพื้นหลังของแท็บที่เลือก */
+
     .nav-pills .active a {
         background-color: black;
         color: white;
@@ -198,8 +207,6 @@
         border-color: black !important;
         opacity: 1;
     }
-
-    
 </style>
 
 <section>
@@ -207,18 +214,22 @@
         <div class="row">
 
             <div class="col-sm-12 col-md-7">
-                <img class="product_picture" src="<?php echo base_url('/assets/img/product1.png'); ?>" alt="product"
-                    width="50%">
+                <img class="product_picture" src="<?php echo $result_list[0]->thumbnail ?>" alt="product" width="50%">
             </div>
 
             <div class="detail_price col-sm-12 col-md-5">
-                <button class="product_stock">In Stock</button>
-                <div class="product_heading">Nike Air Force</div>
-                <div class="product_price"><span><strike>9.99</strike></span> 7.99 USD</div>
+                <?php if ($result_list[0]->stock >= 1) { ?>
+                    <button class="product_stock">In Stock</button>
+                <?php } else { ?>
+                    <button class="product_outstock">Out of Stock</button>
+                <?php } ?>
+
+                <div class="product_heading">
+                    <?php echo $result_list[0]->title ?>
+                </div>
+                <div class="product_price"><span><strike><?php echo $result_list[0]->price ?></strike></span>&ensp;<?php echo number_format($result_list[0]->price-(($result_list[0]->price*$result_list[0]->discountPercentage)/100),2)  ?></div>
                 <hr>
-                <p class="product_description">Cras id felis tincidunt, molestie lacus ac, lobortis nisl. Nam
-                    scelerisque eget mauris sed venenatis. Sed laoreet non velit nec volutpat. Fusce feugiat ornare
-                    purus. Nulla tempor nibh gravida dapibus commodo.</p>
+                <p class="product_description"><?php echo $result_list[0]->description ?></p>
                 <div class="addto_cart">
                     <div class="quantity">
                         &ensp; &ensp;QTY :
@@ -243,50 +254,36 @@
 
             <div class="detail">
                 <div class="tag">
-                    TAGS : &ensp;<button class="tag_name">NIKE</button>
+                    TAGS : &ensp;<button class="tag_name"><?php echo $result_list[0]->brand ?></button>
                 </div>
                 <div id="exTab3" class="tab_content">
                     <ul class="nav nav-pills">
                         <li class="nav_button nav-pills active">
-                            <a href="#1b" data-toggle="tab">DESCRIPTION</a>
+                            <a href="#description" data-toggle="tab">DESCRIPTION</a>
                         </li>
                         <li class="nav_button nav-pills">
-                            <a href="#2b" data-toggle="tab">PRODUCT DETAIL</a>
+                            <a href="#product_detail" data-toggle="tab">PRODUCT DETAIL</a>
                         </li>
                         <li class="nav_button nav-pills">
-                            <a href="#3b" data-toggle="tab">HOW TO GUIDE</a>
+                            <a href="#howtoguide" data-toggle="tab">HOW TO GUIDE</a>
                         </li>
 
                     </ul>
                     <hr class="line">
                     <div class="tab-content clearfix">
-                        <div class="tab-pane active" id="1b">
-                            <p>Donec sit amet faucibus ligula, sed pulvinar dui. Nulla magna leo, efficitur quis est
-                                at, congue suscipit tellus. Ut vitae leo at lectus vulputate tempus. Aliquam sit amet
-                                elementum enim, quis sagittis nibh. Proin in pretium justo, ac pellentesque metus. Morbi
-                                eget augue consectetur, semper elit eget, dapibus elit. Praesent suscipit ut odio quis
-                                tincidunt. Nam et risus eleifend, pretium diam sit amet, gravida odio. Fusce malesuada
-                                nunc sit amet eros tincidunt, ut ultrices diam vehicula. Fusce tempus luctus mi nec
-                                suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                turpis egestas. Duis lacinia odio lorem, sed efficitur metus euismod vitae. Donec
-                                scelerisque dignissim vestibulum. Suspendisse scelerisque nunc nisi, nec varius turpis
-                                dignissim ac. Vestibulum pretium tellus malesuada dui laoreet malesuada. Fusce mattis
-                                commodo dui, sit amet dictum nunc.
-                            </p>
+                        <div class="tab-pane active" id="description">
+                            <p><?php echo $result_list[0]->description ?></p>
                         </div>
-                        <div class="tab-pane" id="2b">
+                        <div class="tab-pane" id="product_detail">
                             <p>We use the class nav-pills instead of nav-tabs which automatically creates a background
                                 color for the tab</p>
                         </div>
-                        <div class="tab-pane" id="3b">
+                        <div class="tab-pane" id="howtoguide">
                             <p>We applied clearfix to the tab-content to rid of the gap between the tab and the content
                             </p>
                         </div>
 
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -315,31 +312,6 @@
     });
 
 
-    <script>
-
-        const tabLinks = document.querySelectorAll('.nav-pills a');
-    tabLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                // เคลียร์สีพื้นหลังแท็บทั้งหมด
-                tabLinks.forEach(link => {
-                    link.parentNode.classList.remove('active');
-                });
-
-                // กำหนดสีพื้นหลังและสีตัวอักษรของแท็บที่ถูกคลิก
-                this.parentNode.classList.add('active');
-
-                // เปิดแท็บที่เกี่ยวข้อง
-                const target = this.getAttribute('href');
-                const tabContent = document.querySelector(target);
-                const allTabContent = document.querySelectorAll('.tab-pane');
-                allTabContent.forEach(content => {
-                    content.classList.remove('active');
-                });
-                tabContent.classList.add('active');
-            });
-    });
-</script>
+   
 
 </script>
