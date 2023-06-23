@@ -192,7 +192,7 @@
 
 
         <div class="slide_detail">
-        <?php foreach ($result->products as $key => $product_list) { ?>
+        <?php foreach (array_slice($result->products,0,10) as $product_list) { ?>
             <div class="p-2">
             <a href="<?php echo base_url('products/products_detail/') . $product_list->id ?>">
                 <img class="w-100" src="<?php echo $product_list->thumbnail ?>" style="border-radius: 30px;">
