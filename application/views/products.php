@@ -57,6 +57,7 @@
             <div class="container">
                 <div class="col-12 content mt-3">
                     <div class="row justify-content-center">
+
                         <?php foreach ($result->products as $key => $product_list) { ?>
 
                             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 product_content mx-auto pt-4">

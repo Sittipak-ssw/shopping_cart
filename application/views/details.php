@@ -218,6 +218,7 @@
             </div>
 
             <div class="detail_price col-sm-12 col-md-5">
+
                 <?php if ($result_list[0]->stock >= 1) { ?>
                     <button class="product_stock">In Stock</button>
                 <?php } else { ?>
@@ -228,6 +229,7 @@
                     <?php echo $result_list[0]->title ?>
                 </div>
                 <div class="product_price"><span><strike><?php echo $result_list[0]->price ?></strike></span>&ensp;<?php echo number_format($result_list[0]->price-(($result_list[0]->price*$result_list[0]->discountPercentage)/100),2)  ?></div>
+
                 <hr>
                 <p class="product_description"><?php echo $result_list[0]->description ?></p>
                 <div class="addto_cart">
