@@ -192,50 +192,16 @@
 
 
         <div class="slide_detail">
-
+        <?php foreach (array_slice($result->products,0,10) as $product_list) { ?>
             <div class="p-2">
-                <img class="w-100" src="<?php echo base_url('assets/img/nike.png') ?>" style="border-radius: 30px;">
+            <a href="<?php echo base_url('products/products_detail/') . $product_list->id ?>">
+                <img class="w-100" src="<?php echo $product_list->thumbnail ?>" style="border-radius: 30px;">
                 <br>
-                <b>Nike Air Force</b>
-                <p>Rp 2.999.999</p>
-            </div>
-            <div class="p-2">
-                <img class="w-100" src="<?php echo base_url('assets/img/hood.png') ?>" style="border-radius: 30px; ">
-                <br>
-                <b>White Sweter</b>
-                <p>Rp 299.999</p>
-            </div>
-            <div class="p-2">
-                <img class="w-100" src="<?php echo base_url('assets/img/clock.png') ?>" style="border-radius: 30px;">
-                <br>
-                <b>Android Smartwatch</b>
-                <p>Rp 1.399.999</p>
-            </div>
-            <div class="p-2">
-                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px;">
-                <br>
-                <b>Apple Airpods</b>
-                <p>Rp 2.599.999</p>
-            </div>
-            <div class="p-2">
-                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px;">
-                <br>
-                <b>Apple Airpods</b>
-                <p>Rp 2.599.999</p>
-            </div>
-            <div class="p-2">
-                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
-                <br>
-                <b>Apple Airpods</b>
-                <p>Rp 2.599.999</p>
-            </div>
-            <div class="p-2">
-                <img class="w-100" src="<?php echo base_url('assets/img/airpod.png') ?>" style="border-radius: 30px; margin-bottom: 20px;">
-                <br>
-                <b>Apple Airpods</b>
-                <p>Rp 2.599.999</p>
-            </div>
-
+                <div class="product_title"><?php echo $product_list->title ?></div>
+                <div class="product_price"><?php echo $product_list->price ?></div>
+            </a>
+            </div> 
+            <?php } ?>
         </div>
     </div>
 
