@@ -59,15 +59,21 @@
                     <div class="row justify-content-center">
 
                         <?php foreach ($result->products as $key => $product_list) { ?>
+
                             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 product_content mx-auto pt-4">
                                 <a href="<?php echo base_url('products/products_detail/') . $product_list->id ?>">
                                     <img class="product_picture" src="<?php echo $product_list->thumbnail ?>" alt="product">
-                                    <div class="product_title"><?php echo $product_list->title ?></div>
-                                    <div class="product_price"><?php echo $product_list->price ?></div>
-
+                                    <div class="product_title">
+                                        <?php echo $product_list->title ?>
+                                    </div>
+                                    <div class="product_price">
+                                        <?php echo $product_list->price ?>
+                                    </div>
                                 </a>
                             </div>
+
                         <?php } ?>
+
 
 
                         <nav aria-label="Page navigation example">

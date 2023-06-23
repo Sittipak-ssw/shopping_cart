@@ -10,6 +10,7 @@ class Products extends CI_Controller
 
 	public function index()
 	{
+
 		$url = 'https://dummyjson.com/products';
 
         // Create a new cURL resource
@@ -31,10 +32,12 @@ class Products extends CI_Controller
 		// echo '<pre>';
         // print_r($result);
         // exit();
+
 		$this->load->view('header');
 		$this->load->view('products', compact('result'));
 		$this->load->view('footer');
 	}
+
 
     public function products_detail($id)
 	{
@@ -72,6 +75,7 @@ class Products extends CI_Controller
 		// echo '<pre>';
         // print_r($result_list);
         // exit();
+
 		$this->load->view('header');
 		$this->load->view('details', compact('result_list'));
 		$this->load->view('footer');
